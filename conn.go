@@ -279,6 +279,14 @@ func (c *Conn) handleGreet(enhanced bool, arg string) {
 			caps = append(caps, "SIZE")
 		}
 
+		if c.server.EnableTranID {
+			caps = append(caps, "CHECKPOINT")
+		}
+
+		if c.server.EnableXtaxFtc {
+			caps = append(caps, "XTAXFTC")
+		}
+
 		args := []string{"Hello " + domain}
 		args = append(args, caps...)
 		c.WriteResponse(250, NoEnhancedCode, args...)
