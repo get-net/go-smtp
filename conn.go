@@ -408,10 +408,8 @@ func (c *Conn) handleMail(arg string) {
 				opts.Auth = &decodedMbox
 			case "TRANSID":
 				opts.TransID = value
-				println(opts.TransID)
 			case "XTAXFTC":
 				opts.XTaxFtc = value
-				println(opts.XTaxFtc)
 			default:
 				c.WriteResponse(500, EnhancedCode{5, 5, 4}, "Unknown MAIL FROM argument")
 				return
