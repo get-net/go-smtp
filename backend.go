@@ -38,6 +38,12 @@ type MailOptions struct {
 	// Size of the body. Can be 0 if not specified by client.
 	Size int
 
+	// Value of TRANSID for CHECKPOINT (RFC 1845)
+	TransID string
+
+	// Value of XTAXFTC for fns extension
+	XTaxFtc string
+
 	// TLS is required for the message transmission.
 	//
 	// The message should be rejected if it can't be transmitted
